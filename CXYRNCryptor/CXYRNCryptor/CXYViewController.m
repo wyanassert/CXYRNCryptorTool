@@ -8,6 +8,7 @@
 
 #import "CXYViewController.h"
 #import "RNEncryptor.h"
+#import "NSString+MD5HexDigest.h"
 
 #define kCXYWeak(weakSelf) __weak __typeof(self)weakSelf = self
 
@@ -110,7 +111,7 @@ typedef void(^DeleteBlock)(NSInteger index);
                                                                  withSettings:kRNCryptorAES256Settings
                                                                      password:_pwdTextField.stringValue
                                                                         error:&error];
-                             NSString *filePath = [[savePath stringByAppendingPathComponent:[[url URLByDeletingPathExtension] lastPathComponent]] stringByAppendingPathExtension:_extensionTextField.stringValue];
+                             NSString *filePath = [[savePath stringByAppendingPathComponent:[[[url URLByDeletingPathExtension] lastPathComponent] md5HexDigest]] stringByAppendingPathExtension:_extensionTextField.stringValue];
  
                              if (!error) {
                                  [encryptedData writeToFile:filePath atomically:NO];
@@ -122,6 +123,17 @@ typedef void(^DeleteBlock)(NSInteger index);
                              NSLog(@"====%@====",filePath);
                          }
                          
+                         //save desc file
+                         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+                         for(NSURL *url in temps) {
+                             [dict setObject:[[[url URLByDeletingPathExtension] lastPathComponent] md5HexDigest] forKey:[[url URLByDeletingPathExtension] lastPathComponent]];
+                         }
+                         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                         [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+                         
+                         NSString *dateString = [formatter stringFromDate:[NSDate date]];
+                         NSString *plistPath = [savePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", dateString]];
+                         [dict writeToFile:plistPath atomically: YES];
 
                     }
             }];

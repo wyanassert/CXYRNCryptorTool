@@ -18,6 +18,7 @@
 		7421FA331B18C0B2007D3732 /* RNCryptorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7421FA2D1B18C0B2007D3732 /* RNCryptorEngine.m */; };
 		7421FA341B18C0B2007D3732 /* RNDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7421FA2F1B18C0B2007D3732 /* RNDecryptor.m */; };
 		7421FA351B18C0B2007D3732 /* RNEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7421FA311B18C0B2007D3732 /* RNEncryptor.m */; };
+		9370C41C1E712C7700252979 /* NSString+MD5HexDigest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9370C41B1E712C7700252979 /* NSString+MD5HexDigest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		7421FA2F1B18C0B2007D3732 /* RNDecryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNDecryptor.m; sourceTree = "<group>"; };
 		7421FA301B18C0B2007D3732 /* RNEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNEncryptor.h; sourceTree = "<group>"; };
 		7421FA311B18C0B2007D3732 /* RNEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNEncryptor.m; sourceTree = "<group>"; };
+		9370C41A1E712C7700252979 /* NSString+MD5HexDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5HexDigest.h"; sourceTree = "<group>"; };
+		9370C41B1E712C7700252979 /* NSString+MD5HexDigest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5HexDigest.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				7421F9BE1B184508007D3732 /* CXYAppDelegate.m */,
 				7421F9C21B184508007D3732 /* CXYViewController.h */,
 				7421F9C31B184508007D3732 /* CXYViewController.m */,
+				9370C41A1E712C7700252979 /* NSString+MD5HexDigest.h */,
+				9370C41B1E712C7700252979 /* NSString+MD5HexDigest.m */,
 				7421F9C51B184508007D3732 /* Images.xcassets */,
 				7421F9C71B184508007D3732 /* Main.storyboard */,
 				7421F9BB1B184508007D3732 /* Supporting Files */,
@@ -253,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9370C41C1E712C7700252979 /* NSString+MD5HexDigest.m in Sources */,
 				7421FA351B18C0B2007D3732 /* RNEncryptor.m in Sources */,
 				7421F9C41B184508007D3732 /* CXYViewController.m in Sources */,
 				7421FA321B18C0B2007D3732 /* RNCryptor.m in Sources */,
@@ -449,6 +455,7 @@
 				7421F9DA1B184509007D3732 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7421F9DB1B184509007D3732 /* Build configuration list for PBXNativeTarget "CXYRNCryptorTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +464,7 @@
 				7421F9DD1B184509007D3732 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
